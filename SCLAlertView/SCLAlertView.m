@@ -344,7 +344,7 @@ SCLTimerDisplay *buttonTimer;
     _labelTitle.frame = CGRectMake(12.0f, kTitleTop, _windowWidth - 24.0f, kTitleHeight);
     
     // Text fields
-    CGFloat y = (_labelTitle.text == nil) ? kTitleTop : kTitleTop + _labelTitle.frame.size.height;
+    CGFloat y = (_labelTitle.text == nil) ? kTitleTop+10 : kTitleTop + _labelTitle.frame.size.height;
     _viewText.frame = CGRectMake(12.0f, y, _windowWidth - 24.0f, _subTitleHeight);
     
     if (!_labelTitle && !_viewText) {
@@ -892,11 +892,11 @@ SCLTimerDisplay *buttonTimer;
     else
     {
         // Title is nil, we can move the body message to center and remove it from superView
-        self.windowHeight -= _labelTitle.frame.size.height;
+        self.windowHeight -= _labelTitle.frame.size.height-10;
         [_labelTitle removeFromSuperview];
         _labelTitle = nil;
         
-        _subTitleY = kCircleHeight - 20;
+        _subTitleY = kCircleHeight;
     }
     
     // Subtitle
